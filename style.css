@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+body {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: 
+    linear-gradient(#3ee68a, #36d07d),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  background-blend-mode: multiply;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 10rem;
+
+    /* Gradient carnaval vibes */
+    background: linear-gradient(90deg,
+            #ff00cc,
+            #ffcc00,
+            #00ffcc,
+            #3399ff,
+            #cc00ff);
+
+    /* aplica o gradient no texto */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* stroke preto */
+    -webkit-text-stroke: 2px black;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 3rem 10rem;
+}
+
+/* cada card da galeria */
+.gallery-item {
+  display: flex;
+  flex: 0 0 calc((100% - 4rem) / 5);
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+/* "janela" da foto */
+.window {
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #808080; /* cinza XP */
+  background: #fff;
+  display: inline-block;
+}
+
+.button{
+    text-decoration: none;
+    color: black;
+    border: solid 2px black;
+    padding: 1rem 4rem;
+    font-weight: 800;
+    border-radius: 1rem;
+    background: #c0c0c0
+}
+
+/* imagem */
+.window img {
+  display: block;
+  max-width: 200px;
+  height: auto;
+}
+
+/* legenda */
+.gallery-item span {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.photo-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.photo-viewer.hidden {
+  display: none;
+}
+
+.viewer-content {
+  background: #c0c0c0;
+  border: 2px solid black;
+  /* box-shadow: 4px 4px 0 #808080; */
+  padding: 10px;
+  position: relative;
+}
+
+.viewer-content img {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #c0c0c0;
+  border: 2px solid black;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 150px;
+  height: 50px;
+
+  background: #c0c0c0;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 0 #808080;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+/* seta */
+.scroll-down .arrow {
+  font-size: 22px;
+  color: black;
+  font-family: Tahoma, Arial, sans-serif;
+
+  animation: bounce 1.2s infinite;
+}
+
+/* hover estilo botão pressionado */
+.scroll-down:hover {
+  transform: translate(-50%, 2px);
+  box-shadow: 1px 1px 0 #808080;
+}
+
+/* animação */
+@keyframes bounce {
+  0%, 100% { transform: translateY(-6px); }
+  50% { transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
