@@ -338,3 +338,24 @@ html {
     font-size: 14px;
   }
 }
+
+@media (max-width: 480px) {
+  .photo-viewer {
+    padding: 1rem;
+  }
+
+  .viewer-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .viewer-content img {
+    width: 100%;
+    height: auto;
+  }
+
+  .close-btn {
+    top: 6px;
+    right: 6px;
+  }
+}
